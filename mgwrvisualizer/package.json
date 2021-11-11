@@ -1,0 +1,32 @@
+{
+  "name": "mgwrvisualizer",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
+    "format": "prettier .  --write"
+  },
+  "dependencies": {
+    "@deck.gl/core": "8.6.1",
+    "@deck.gl/layers": "^8.6.3",
+    "d3-scale-chromatic": "^3.0.0",
+    "daisyui": "^1.16.2",
+    "geostats": "^2.0.0",
+    "pinia": "^2.0.3",
+    "plotly.js-dist-min": "^2.6.3",
+    "vue": "^3.2.16",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.3",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "prettier": "2.4.1",
+    "vite": "^2.6.4",
+    "vite-plugin-windicss": "^1.5.1",
+    "windicss": "^3.2.1"
+  }
+}
