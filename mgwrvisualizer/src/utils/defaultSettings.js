@@ -60,3 +60,23 @@ export const CLASSIFICATION_CATEGORIES = [
       value: "JNK",
     },
   ]
+
+
+export const SCATTER_DEFAULT = {
+  x: [],
+  y: [],
+  error_y: {
+    type: 'data',
+    array: [],
+    visible: true,
+    color: "",
+    thickness: 1.5,
+    width: 3,
+    opacity: 1
+  },
+  marker: {
+  color: '#808080',
+  size: 8
+},
+  type: 'scatter'
+}

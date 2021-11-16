@@ -42,7 +42,7 @@ import ColorKey from "../components/Map/ColorKey.vue";
 
 <style scoped>
 .box {
-    @apply w-full min-h-56 pb-3 py-3;
+    @apply w-full min-h-56 pb-3;
     background-color: #fefefe;
 }
 
