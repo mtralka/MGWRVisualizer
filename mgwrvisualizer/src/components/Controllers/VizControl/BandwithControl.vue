@@ -14,21 +14,13 @@ const handleCovariateChange = (event) => {
 </script>
 
 <template>
-<div class="h-full w-full flex flex-col space-y-4">
-    <p class="text-2xl font-bold">
-        Bandwith
-    </p>
-    <div class="flex flex-col space-y-4">
+    <div class="h-full w-full flex flex-col space-y-4">
         <div class="flex flex-row space-x-2 items-center justify-evenly">
             <p>
                 Covariate (K)
             </p>
-            <SelectMenu :data="dataStore.getCovariateKeys" placeholder="Select K" @change="handleCovariateChange">
-
-            </SelectMenu>
+            <SelectMenu :data="dataStore.getCovariateKeys" placeholder="Select K" @change="handleCovariateChange"/>
         </div>
     </div>
-</div>
-
-
 </template>
+
