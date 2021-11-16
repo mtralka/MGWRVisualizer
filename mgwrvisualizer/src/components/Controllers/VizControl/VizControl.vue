@@ -1,10 +1,10 @@
 <script setup>
+// import BandwithVue from "./BandwithControl.vue";
+import CovariatesVue from "@/components/Visualizers/Covariates.vue";
 import { useSelectionStore } from "@/store/selectionStore";
 import { VizType } from "../../../mapUtils/types";
 import RadioItem from "../../RadioItem.vue";
 import AttributeVue from "./AttributeControl.vue";
-import BandwithVue from "./BandwithControl.vue";
-
 const selectionStore = useSelectionStore()
 
 
@@ -30,6 +30,6 @@ const handleRadioClick = (event) => {
                 </RadioItem>
             </div> 
         </div>
-        <component :is="selectionStore.getVizualizationType === 'AT' ? AttributeVue : BandwithVue" class="flex-grow py-2 px-4"></component>
+        <component :is="selectionStore.getVizualizationType === 'AT' ? AttributeVue : CovariatesVue" class="flex-grow py-2 px-4"></component>
     </div>
 </template>

@@ -5,7 +5,8 @@ export const useDataStore = defineStore('dataStore', {
   state: () => ({
     geoJsonData: {},
     W: {},
-    params: {}
+    params: {},
+    covaraites: {}
   }),
   getters: {
     getGeoJsonData(state){
@@ -15,7 +16,10 @@ export const useDataStore = defineStore('dataStore', {
       return state.W
     },
     getCovariateKeys(state){
-      return Object.keys(state.W)
+      return Object.keys(state.covaraites)
+    },
+    getCovariateInfo(state) {
+      return state.covaraites
     },
     getGeoJsonPropertyKeys(state){
       return Object.keys(state.geoJsonData.features[0].properties)
@@ -24,6 +28,11 @@ export const useDataStore = defineStore('dataStore', {
       const selectionStore = useSelectionStore()
       const selectedAttr = selectionStore.getSelectedAttribute
       return state.geoJsonData.features.map(el => el.properties[selectedAttr])
+    },
+    getSelectedCovariateInfo(state){
+      const selectionStore = useSelectionStore()
+      const selectedK = selectionStore.getSelectedK || "K0"
+      return state.covaraites[selectedK]
     },
     getParams(state){
       return state.params
