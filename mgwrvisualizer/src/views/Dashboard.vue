@@ -16,11 +16,11 @@ import ColorKey from "../components/Map/ColorKey.vue";
             </Map>
             
         </div>
-        <div class="col-span-full md:row-span-1  box">
+        <div class="col-span-full md:col-span-1 md:row-span-1  box">
             BOX 1
         </div>
 
-        <div class="col-span-full md:row-span-1  box">
+        <div class="col-span-full md:col-span-1 md:row-span-1  box">
             <VizControl></VizControl>
         </div>
 
