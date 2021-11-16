@@ -45,5 +45,5 @@ function handleMapChange(viewState) {
 </script>
 
 <template>
-  <div id="map" ref="map" class="w-full h-full absolute top-0 left-0"></div>
+  <div id="map" ref="map" class="w-full h-full absolute top-0 left-0 overflow-hidden"></div>
 </template>

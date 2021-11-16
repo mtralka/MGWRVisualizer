@@ -8,7 +8,7 @@ import ColorKey from "../components/Map/ColorKey.vue";
 
 
 <template>
-<div class=" w-full min-h-full px-10 overflow-x-hidden">
+<div class=" w-full min-h-full px-3 md:px-10 overflow-hidden">
     <div class="w-full min-h-full grid-cols-2 grid gap-1.5rem py-10 ">
         <div class="col-span-full row-span-2 h-[32rem] relative">
             <Map>
@@ -16,20 +16,12 @@ import ColorKey from "../components/Map/ColorKey.vue";
             </Map>
             
         </div>
-        <div class="row-span-1  box">
+        <div class="col-span-full md:row-span-1  box">
             BOX 1
         </div>
 
-        <div class="row-span-1  box">
+        <div class="col-span-full md:row-span-1  box">
             <VizControl></VizControl>
-        </div>
-
-        <div class="row-span-1 bg-blue-600 box">
-            BOX 2
-        </div>
-
-        <div class="row-span-1 bg-blue-600 box">
-            BOX 2
         </div>
 
         <div class="col-span-full row-span-2 h-[32rem] box">
