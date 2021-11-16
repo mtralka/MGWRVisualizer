@@ -32,7 +32,7 @@ const handleNumberClassesChange = (event) => {
 
     <div class="h-full w-full flex flex-col space-y-4">
         <p class="text-2xl font-bold">
-            Bandwith
+            Attribute
         </p>
         <div class="flex flex-col space-y-4 justify-evenly">
             <div class="flex flex-row space-x-10 items-center justify-evenly">
