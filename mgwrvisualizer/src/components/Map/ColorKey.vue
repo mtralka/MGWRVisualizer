@@ -1,5 +1,5 @@
 <script setup>
-import { VizType } from '@/mapUtils/types';
+import { VizType } from '@/utils/types';
 import * as d3scaleChromatic from 'd3-scale-chromatic';
 import { useSelectionStore } from '../../store/selectionStore';
 const selectionStore = useSelectionStore()

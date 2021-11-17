@@ -6,7 +6,7 @@ import { useDataStore } from "@/store/dataStore";
 import { useSelectionStore } from '@/store/selectionStore';
 import { MAP_STYLES } from '@/utils/defaultSettings';
 import { onMounted, reactive } from 'vue-demi';
-import { VizType } from '../../mapUtils/types';
+import { VizType } from '../../utils/types';
 import Mapbox from './Mapbox.vue';
 
 const dataStore = useDataStore()

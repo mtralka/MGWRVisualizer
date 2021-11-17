@@ -1,5 +1,5 @@
 // import App from "@/App.vue";
-import { VizType } from "@/mapUtils/types";
+import { VizType } from "@/utils/types";
 import { useDataStore } from "@/store/dataStore";
 import { useSelectionStore } from "@/store/selectionStore";
 import * as d3scaleChromatic from 'd3-scale-chromatic';

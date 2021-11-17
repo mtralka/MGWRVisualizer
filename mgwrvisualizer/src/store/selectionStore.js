@@ -1,10 +1,11 @@
 import { createCategoricalBuckets } from '@/mapUtils/bucketGenerator';
-import { VizType } from '@/mapUtils/types';
+import { ResultsType, VizType } from '@/utils/types';
 import { defineStore } from 'pinia';
 
 export const useSelectionStore = defineStore('selectionStore', {
   state: () => ({
     vizualizationType: VizType.BANDWITH,
+    modelResultsType: ResultsType.MODEL_RESULTS,
     selectedK: null,
     selectedUID: null,
     selectedAttribute: null,
@@ -17,6 +18,9 @@ export const useSelectionStore = defineStore('selectionStore', {
   getters: {
     getVizualizationType(state){
       return state.vizualizationType
+    },
+    getModelResultsType(state){
+      return state.modelResultsType
     },
     getSelectedK(state) {
       return state.selectedK
