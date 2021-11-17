@@ -33,7 +33,6 @@ onMounted(()=> {
     passData.data = dataStore.getGeoJsonData
 })
 
-
 const handleHover = ({ info, event }) => {
 
     if (!info.object){
@@ -54,26 +53,23 @@ const handleClick = ({ info, event }) => {
 
 
 }
-
 </script>
 
 <template>
-<div class="relative h-full w-full">
-<DeckGL>
-    <Mapbox :access-token="accessToken" :mapStyle="MAP_STYLES.DARK"></Mapbox>
-    <GeoJsonLayer
-    :data="passData.data"
-    :pickable="true" :stroked="true"
-    :filled="true" :extruded="false"
-    :wireframe="true" :lineWidthScale="20" 
-    :lineWidthMinPixels="2" 
-    :getFillColor="getFillColor" :getLineColor="[160, 160, 180, 200]"
-    @hover="handleHover" @click="handleClick"
-    >
-    </GeoJsonLayer>
-</DeckGL>
-<slot></slot>
-</div>
-
-
+    <div class="relative h-full w-full">
+    <DeckGL>
+        <Mapbox :access-token="accessToken" :mapStyle="MAP_STYLES.DARK"></Mapbox>
+        <GeoJsonLayer
+        :data="passData.data"
+        :pickable="true" :stroked="true"
+        :filled="true" :extruded="false"
+        :wireframe="true" :lineWidthScale="20" 
+        :lineWidthMinPixels="2" 
+        :getFillColor="getFillColor" :getLineColor="[160, 160, 180, 200]"
+        @hover="handleHover" @click="handleClick"
+        >
+        </GeoJsonLayer>
+    </DeckGL>
+    <slot></slot>
+    </div>
 </template>

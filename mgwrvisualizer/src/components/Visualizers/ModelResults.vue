@@ -13,8 +13,8 @@ const handleRadioClick = (selection) => {
 // DI - Diagnostic Information
 // MR - Model Results
 const options = [
-    {value: "DI", checked: true, name: 'Bandwith' },
-    {value: "MR", checked: false,  name: 'Attribute'}
+    {value: "DI", checked: false, name: 'Diagnostic Information' },
+    {value: "MR", checked: true,  name: 'Model Results'}
 ]
 
 </script>

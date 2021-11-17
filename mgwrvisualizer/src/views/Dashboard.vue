@@ -1,8 +1,24 @@
 <script setup>
 import Caterpillar from "@/components/Caterpillar.vue";
-import VizControl from "@/components/Controllers/VizControl.vue";
+import AttributeVue from "@/components/Controllers/AttributeControl.vue";
 import ColorKey from "@/components/Map/ColorKey.vue";
 import Map from "@/components/Map/Map.vue";
+import RadioComponentSelector from "@/components/RadioComponentSelector.vue";
+import CovariatesVue from "@/components/Visualizers/Covariates.vue";
+import { VizType } from "@/mapUtils/types";
+import { useSelectionStore } from "@/store/selectionStore";
+import { computed } from 'vue';
+
+
+
+const selectionStore = useSelectionStore()
+
+const activeVizComponent = computed(() => selectionStore.getVizualizationType === 'AT' ? AttributeVue : CovariatesVue)
+
+const vizControlOptions = [
+    {value: VizType.BANDWITH, checked: true, name: 'Bandwith' },
+    {value: VizType.ATTRIBUTE, checked: false,  name: 'Attribute'}
+]
 
 </script>
 
@@ -20,8 +36,9 @@ import Map from "@/components/Map/Map.vue";
             BOX 1
         </div>
 
+        <!-- Viz Control -->
         <div class="col-span-full md:col-span-1 md:row-span-1  box">
-            <VizControl></VizControl>
+            <RadioComponentSelector :data="vizControlOptions" name="Visualize:" @change="handleRadioClick" :component="activeVizComponent"/>
         </div>
 
         <div class="col-span-full row-span-2 h-[32rem] box">
