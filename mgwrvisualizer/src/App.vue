@@ -1,12 +1,12 @@
 <script setup>
+import covaraites from "@/assets/covariates.json";
 import data from "@/assets/georgia_testBW.json";
 import W from "@/assets/KN.json";
-import params from "@/assets/params.json";
-import covaraites from "@/assets/covariates.json";
 import modelResults from "@/assets/model_results.json";
+import params from "@/assets/params.json";
 import { useDataStore } from "@/store/dataStore";
 import { useSelectionStore } from "@/store/selectionStore";
-import { onMounted } from 'vue-demi';
+import { onMounted } from 'vue';
 
 const dataStore = useDataStore()
 const selectStore = useSelectionStore()

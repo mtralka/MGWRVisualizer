@@ -1,13 +1,13 @@
 <script setup>
 import DeckGL from '@/components/Map/DeckGL.vue';
 import GeoJsonLayer from "@/components/Map/GeoJsonLayer.vue";
+import Mapbox from '@/components/Map/Mapbox.vue';
 import { getFillColor } from '@/mapUtils/fillVisualizer';
 import { useDataStore } from "@/store/dataStore";
 import { useSelectionStore } from '@/store/selectionStore';
 import { MAP_STYLES } from '@/utils/defaultSettings';
-import { onMounted, reactive } from 'vue-demi';
-import { VizType } from '../../utils/types';
-import Mapbox from './Mapbox.vue';
+import { VizType } from '@/utils/types';
+import { onMounted, reactive } from 'vue';
 
 const dataStore = useDataStore()
 const selectionStore = useSelectionStore()

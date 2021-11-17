@@ -1,7 +1,7 @@
 <script setup>
+import { useSelectionStore } from '@/store/selectionStore';
 import { VizType } from '@/utils/types';
 import * as d3scaleChromatic from 'd3-scale-chromatic';
-import { useSelectionStore } from '../../store/selectionStore';
 const selectionStore = useSelectionStore()
 
 const bandwithRange = [

@@ -1,9 +1,9 @@
 <script setup>
+import { useDataStore } from '@/store/dataStore';
+import { useSelectionStore } from '@/store/selectionStore';
 import { config, insigGraph, layout, sigNegativeGraph, sigPositiveGraph } from "@/utils/caterpillarSettings";
 import Plotly from 'plotly.js-dist-min';
 import { computed, onMounted, watch } from 'vue';
-import { useDataStore } from '../store/dataStore';
-import { useSelectionStore } from '../store/selectionStore';
 const dataStore = useDataStore()
 const selectionStore = useSelectionStore()
 

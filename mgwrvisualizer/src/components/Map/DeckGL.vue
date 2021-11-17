@@ -1,8 +1,8 @@
 <script setup>
+import { useSelectionStore } from "@/store/selectionStore";
 import { DECKGL_SETTINGS } from "@/utils/defaultSettings";
 import { Deck } from '@deck.gl/core';
 import { onMounted, provide, reactive, useAttrs } from 'vue';
-import { useSelectionStore } from "../../store/selectionStore";
 
 const selectionStore = useSelectionStore()
 const attrs = useAttrs()

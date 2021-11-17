@@ -1,7 +1,7 @@
 <script setup>
+import { useSelectionStore } from '@/store/selectionStore';
 import { GeoJsonLayer } from '@deck.gl/layers';
 import { inject, useAttrs, watch } from 'vue';
-import { useSelectionStore } from '../../store/selectionStore';
 
 
 const attrs = useAttrs()

@@ -1,12 +1,11 @@
 import Dashboard from "@/views/Dashboard.vue";
-import HelloWord from "@/views/HelloWorld.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
     {
       path: "/",
       name: "Hello Worlds",
-      component: HelloWord,
+      component: Dashboard,
     },
     {
       path: "/visualize",
