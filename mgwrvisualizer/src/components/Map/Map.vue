@@ -36,13 +36,10 @@ onMounted(()=> {
 const handleHover = ({ info, event }) => {
 
     if (!info.object){
-        console.log("HOVER NO OBECT")
         return
     }
 
     if (selectionStore.getVizualizationType != VizType.BANDWITH){
-        console.log(info.object.properties[selectionStore.getSelectedAttribute])
-        
         return
     }
 
@@ -58,13 +55,14 @@ const handleClick = ({ info, event }) => {
 <template>
     <div class="relative h-full w-full">
     <DeckGL>
-        <Mapbox :access-token="accessToken" :mapStyle="MAP_STYLES.DARK"></Mapbox>
+        <Mapbox :access-token="accessToken" :map-style="MAP_STYLES.DARK"></Mapbox>
         <GeoJsonLayer
         :data="passData.data"
         :pickable="true" :stroked="true"
         :filled="true" :extruded="false"
         :wireframe="true" :lineWidthScale="20" 
         :lineWidthMinPixels="2" 
+        :getRadius="100" :getLineWidth="1"
         :getFillColor="getFillColor" :getLineColor="[160, 160, 180, 200]"
         @hover="handleHover" @click="handleClick"
         >

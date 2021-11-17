@@ -12,9 +12,6 @@ const dataStore = useDataStore()
 const selectStore = useSelectionStore()
 
 onMounted(() => {
-  // const data = import.meta.glob("/assets/georgia_testBW.json")
-  // onst data = require("@/assets/georgia_testBW.json")
-
   dataStore.geoJsonData = data
   dataStore.W = W
   dataStore.params = params

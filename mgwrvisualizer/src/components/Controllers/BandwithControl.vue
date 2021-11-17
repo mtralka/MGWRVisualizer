@@ -8,7 +8,6 @@ const selectionStore = useSelectionStore()
 
 const handleCovariateChange = (event) => {
     selectionStore.selectedK = event.target.value
-    console.log(event.target.value)
 }
 
 </script>

@@ -16,7 +16,6 @@ const handleAttributeChange = (event) => {
 }
 
 const handleClassificationChange = (event) => {
-    console.log("RECEIVED", event.target.value)
     selectionStore.classificationType = event.target.value
     selectionStore.generateBuckets()
 }
@@ -67,8 +66,8 @@ const handleNumberClassesChange = (event) => {
                     v-model="value" 
                     :min="2"
                     :max="8"
-                    @change="handleNumberClassesChange"
                     class="flex-shrink-0 slider"
+                    @change="handleNumberClassesChange"
                 >
                 </Slider>
                 </div>

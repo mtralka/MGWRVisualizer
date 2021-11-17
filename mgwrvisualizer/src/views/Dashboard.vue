@@ -23,8 +23,8 @@ const vizControlOptions = [
 const activeModelResultsComponent = computed(() => selectionStore.getModelResultsType === ResultsType.DIAGNOSTIC_INFO ? DiagnosticVue : ModelResultsVue)
 
 const modelResultsOptions = [
-    {value: ResultsType.MODEL_RESULTS, checked: true,  name: 'Model Results'},
-    {value: ResultsType.DIAGNOSTIC_INFO, checked: false, name: 'Diagnostic Information'}
+    {value: ResultsType.MODEL_RESULTS, checked: true,  name: 'Model'},
+    {value: ResultsType.DIAGNOSTIC_INFO, checked: false, name: 'Diagnostic'}
 ]
 
 </script>
@@ -44,13 +44,13 @@ const modelResultsOptions = [
             <RadioComponentSelector
             :data="modelResultsOptions"
             name="Results:"
-            @change="selectionStore.modelResultsType = $event"
-            :component="activeModelResultsComponent"/>
+            :component="activeModelResultsComponent"
+            @change="selectionStore.modelResultsType = $event"/>
         </div>
 
         <!-- Map Visualization Controller -->
         <div class="col-span-full md:col-span-1 md:row-span-1  box">
-            <RadioComponentSelector :data="vizControlOptions" name="Visualize:" @change="selectionStore.vizualizationType = $event" :component="activeVizComponent"/>
+            <RadioComponentSelector :data="vizControlOptions" name="Visualize:" :component="activeVizComponent" @change="selectionStore.vizualizationType = $event"/>
         </div>
 
         <div class="col-span-full row-span-2 h-[32rem] box">

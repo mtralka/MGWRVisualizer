@@ -45,11 +45,6 @@ const createPlot = () => {
   const insignificant = assignData(insigGraph, insignificantArray)
   
   Plotly.newPlot("graph", [significantNegative, significantPositive, insignificant], layout, config);
-  //insigGraph, sigNegativeGraph, sigPositiveGraph 
-  // const insignificantArray = sortedArray.filter((el) => el)
-  // const insignificant = assignData(sigNegativeGraph, insignificantArray)
-  // console.log(insignificantArray, "INSIG ARR")
-  // Plotly.newPlot("graph", [insignificant]);
 }
 
 </script>

@@ -8,7 +8,8 @@ const dataStore = useDataStore()
 <template>
     <div class="h-full w-full flex flex-col space-y-4 items-center">
         <table class="">
-            <tr v-for="(value,name, idx) in dataStore.getDiagnosticInformation" :key="idx"
+            <tr
+v-for="(value,name, idx) in dataStore.getDiagnosticInformation" :key="idx"
             class="flex flex-row space-x-2 justify-evenly">
                 <td class="w-full px-4 text-gray-800">{{name}}</td>
                 <td class="px-4 min-w-[100px]">{{parseFloat(value).toFixed(4)}}</td>

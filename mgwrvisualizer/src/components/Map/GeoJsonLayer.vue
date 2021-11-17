@@ -3,6 +3,7 @@ import { GeoJsonLayer } from '@deck.gl/layers';
 import { inject, useAttrs, watch } from 'vue';
 import { useSelectionStore } from '../../store/selectionStore';
 
+
 const attrs = useAttrs()
 const updateLayer = inject('updateLayer')
 const selectionStore = useSelectionStore()
@@ -39,6 +40,7 @@ updateLayer(
         },
         onClick: (info, event) => emit('click', { info, event }),
         onHover: (info, event) => emit('hover', { info, event }),
+        
     })
   )
 }

@@ -1,17 +1,8 @@
-// import App from "@/App.vue";
-import { VizType } from "@/utils/types";
+
 import { useDataStore } from "@/store/dataStore";
 import { useSelectionStore } from "@/store/selectionStore";
+import { VizType } from "@/utils/types";
 import * as d3scaleChromatic from 'd3-scale-chromatic';
-// import { createPinia } from 'pinia';
-// import { createApp } from 'vue';
-
-
-// const pinia = createPinia()
-// const app = createApp(App)
-// app.use(pinia)
-
-
 
 export const getFillColor = (f) => {
 

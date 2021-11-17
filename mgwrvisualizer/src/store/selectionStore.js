@@ -49,8 +49,8 @@ export const useSelectionStore = defineStore('selectionStore', {
   },
   actions: {
     async generateBuckets() {
+      console.log("DISPATCHING")
       const buckets = await createCategoricalBuckets()
-      console.log({buckets})
       this.classificationBuckets = buckets
     },
   },
