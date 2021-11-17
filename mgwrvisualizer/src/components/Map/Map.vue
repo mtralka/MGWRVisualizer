@@ -30,7 +30,6 @@ const renderTriggers = [
 ]
 
 onMounted(()=> {
-    console.log(dataStore.getGeoJsonData)
     passData.data = dataStore.getGeoJsonData
 })
 

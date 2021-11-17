@@ -1,8 +1,8 @@
 <script setup>
-import VizControl from "@/components/Controllers/VizControl/VizControl.vue";
+import Caterpillar from "@/components/Caterpillar.vue";
+import VizControl from "@/components/Controllers/VizControl.vue";
+import ColorKey from "@/components/Map/ColorKey.vue";
 import Map from "@/components/Map/Map.vue";
-import Caterpillar from "../components/Caterpillar.vue";
-import ColorKey from "../components/Map/ColorKey.vue";
 
 </script>
 

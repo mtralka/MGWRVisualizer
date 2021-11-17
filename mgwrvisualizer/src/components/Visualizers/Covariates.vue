@@ -1,5 +1,5 @@
 <script setup>
-import BandwithControl from "@/components/Controllers/VizControl/BandwithControl.vue";
+import BandwithControl from "@/components/Controllers/BandwithControl.vue";
 import { useDataStore } from '@/store/dataStore';
 
 const dataStore = useDataStore()
