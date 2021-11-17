@@ -6,7 +6,8 @@ export const useDataStore = defineStore('dataStore', {
     geoJsonData: {},
     W: {},
     params: {},
-    covaraites: {}
+    covaraites: {},
+    modelResults: {}
   }),
   getters: {
     getGeoJsonData(state){
@@ -36,6 +37,12 @@ export const useDataStore = defineStore('dataStore', {
     },
     getParams(state){
       return state.params
+    },
+    getDiagnosticInformation(state){
+      return state.modelResults["diagnostic_info"]
+    },
+    getModelResults(state){
+      return state.modelResults["model_results"]
     }
   },
   actions: {

@@ -3,6 +3,7 @@ import data from "@/assets/georgia_testBW.json";
 import W from "@/assets/KN.json";
 import params from "@/assets/params.json";
 import covaraites from "@/assets/covariates.json";
+import modelResults from "@/assets/model_results.json";
 import { useDataStore } from "@/store/dataStore";
 import { useSelectionStore } from "@/store/selectionStore";
 import { onMounted } from 'vue-demi';
@@ -18,6 +19,7 @@ onMounted(() => {
   dataStore.W = W
   dataStore.params = params
   dataStore.covaraites = covaraites
+  dataStore.modelResults = modelResults
   // selectStore.selectedK = dataStore.getCovariateKeys.at(0)
 })
 

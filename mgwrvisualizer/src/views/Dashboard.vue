@@ -5,6 +5,8 @@ import ColorKey from "@/components/Map/ColorKey.vue";
 import Map from "@/components/Map/Map.vue";
 import RadioComponentSelector from "@/components/RadioComponentSelector.vue";
 import CovariatesVue from "@/components/Visualizers/Covariates.vue";
+import DiagnosticVue from "@/components/Visualizers/Diagnostic.vue";
+import ModelResultsVue from "@/components/Visualizers/ModelResults.vue";
 import { useSelectionStore } from "@/store/selectionStore";
 import { ResultsType, VizType } from "@/utils/types";
 import { computed } from 'vue';
@@ -18,7 +20,7 @@ const vizControlOptions = [
     {value: VizType.ATTRIBUTE, checked: false,  name: 'Attribute'}
 ]
 
-const activeModelResultsComponent = computed(() => selectionStore.getModelResultsType === ResultsType.DIAGNOSTIC_INFO ? AttributeVue : CovariatesVue)
+const activeModelResultsComponent = computed(() => selectionStore.getModelResultsType === ResultsType.DIAGNOSTIC_INFO ? DiagnosticVue : ModelResultsVue)
 
 const modelResultsOptions = [
     {value: ResultsType.MODEL_RESULTS, checked: true,  name: 'Model Results'},
@@ -26,7 +28,6 @@ const modelResultsOptions = [
 ]
 
 </script>
-
 
 <template>
 <div class=" w-full min-h-full px-3 md:px-10 overflow-hidden">
@@ -37,28 +38,26 @@ const modelResultsOptions = [
             </Map>
             
         </div>
+
+        <!-- Model Results Controller -->
         <div class="col-span-full md:col-span-1 md:row-span-1  box">
-            <RadioComponentSelector :data="modelResultsOptions" name="Model Results:" @change="modelResultsRef.value = $event" :component="activeModelResultsComponent"/>
+            <RadioComponentSelector
+            :data="modelResultsOptions"
+            name="Results:"
+            @change="selectionStore.modelResultsType = $event"
+            :component="activeModelResultsComponent"/>
         </div>
 
-        <!-- Viz Control -->
+        <!-- Map Visualization Controller -->
         <div class="col-span-full md:col-span-1 md:row-span-1  box">
             <RadioComponentSelector :data="vizControlOptions" name="Visualize:" @change="selectionStore.vizualizationType = $event" :component="activeVizComponent"/>
         </div>
 
         <div class="col-span-full row-span-2 h-[32rem] box">
-            <Caterpillar>
-                
-            </Caterpillar>
+            <Caterpillar/>
         </div>
-
-
-
     </div>
-
-
 </div>
-
 </template>
 
 
@@ -67,5 +66,4 @@ const modelResultsOptions = [
     @apply w-full min-h-56 pb-3;
     background-color: #fefefe;
 }
-
 </style>
