@@ -9,7 +9,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      'pinia' : '/node_modules/pinia'
     },
   },
 });
