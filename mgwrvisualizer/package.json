@@ -13,7 +13,7 @@
     "@deck.gl/layers": "^8.6.3",
     "d3-scale-chromatic": "^3.0.0",
     "daisyui": "^1.16.2",
-    "geostats": "^2.0.0",
+    "geobuckets": "^0.0.2",
     "mapbox-gl": "^2.6.0",
     "pinia": "^2.0.3",
     "plotly.js-dist-min": "^2.6.3",
