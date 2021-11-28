@@ -1,0 +1,6 @@
+[build]
+    base = "mgwrvisualizer/"
+    publish = "dist/"
+    command = "npm run build"
+[context.staging]
+    command = "npm run build"
