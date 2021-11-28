@@ -1,3 +1,4 @@
+import { BucketTypes } from "geobuckets/dist/src"
 
 export const MAP_STYLES = {
     SATELLITE: 'mapbox://styles/mapbox/satellite-v9',
@@ -37,27 +38,27 @@ export const CLASSIFICATION_CATEGORIES = [
 
     {
       label: "Equal Interval",
-      value: "EQI",
+      value: BucketTypes.EQI
     },
     {
       label: "Quantile",
-      value: "QNT",
+      value: BucketTypes.QNT
     },
     {
       label: "Standard Deviation",
-      value: "STD",
+      value: BucketTypes.STD
     },
     {
       label: "Geometric Progession",
-      value: "GPG",
+      value: BucketTypes.GPG
     },
     {
       label: "Arithmetic Progression",
-      value: "APG",
+      value: BucketTypes.APG
     },
     {
       label: "Jenks",
-      value: "JNK",
+      value: BucketTypes.JNK
     },
   ]
 
