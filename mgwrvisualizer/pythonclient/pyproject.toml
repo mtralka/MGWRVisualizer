@@ -1,9 +1,9 @@
 [tool.poetry]
 name = "mgwrvisualizer"
-version = "0.0.1"
+version = "0.0.2"
 description = "Visualization Suite for Multiscale Geographically Weighted Regression (MGWR) "
 authors = ["Matthew Tralka <matthew@tralka.xyz>"]
-
+include = ["webclient_dist/*"]
 license = "MIT"
 repository = "https://github.com/mtralka/MGWRVisualizer"
 readme = "README.md"

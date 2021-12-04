@@ -169,6 +169,8 @@ class MGWRVisualizer:
         if not hasattr(self, "processed_results"):
             self.process()
 
+        self.save_results("")
+
         print("RUNNING SERVER")
 
         return None
