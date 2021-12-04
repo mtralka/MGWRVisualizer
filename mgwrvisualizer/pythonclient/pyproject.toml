@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "mgwrvisualizer"
+version = "0.0.1"
+description = ""
+authors = ["Matthew Tralka <matthew@tralka.xyz>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+black = "^21.11b1"
+mypy = "^0.910"
+notebook = "^6.4.6"
+pre-commit = "^2.16.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
