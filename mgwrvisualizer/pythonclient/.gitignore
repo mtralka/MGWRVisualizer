@@ -1,4 +1,5 @@
 test.json
+webclient_dist/*
 
 /scripts    
 testing.ipynb
