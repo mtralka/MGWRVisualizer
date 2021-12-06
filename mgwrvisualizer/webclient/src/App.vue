@@ -1,5 +1,4 @@
 <script setup>
-import { covariates, diagnosticInfo, geojson, modelResults, parameters, W } from "@/assets/test.json";
 import { useDataStore } from "@/store/dataStore";
 import { useSelectionStore } from "@/store/selectionStore";
 import { onMounted } from 'vue';
@@ -7,13 +6,26 @@ import { onMounted } from 'vue';
 const dataStore = useDataStore()
 const selectStore = useSelectionStore()
 
-onMounted(() => {
-  dataStore.geoJsonData = geojson
-  dataStore.W = W
-  dataStore.params = parameters
-  dataStore.covaraites = covariates
-  dataStore.diagnosticInfo = diagnosticInfo
-  dataStore.modelResults = modelResults
+onMounted(async () => {
+  
+  const urlParams = new URLSearchParams(window.location.search);
+  const dataSetName = urlParams.get("name");
+
+  if (dataSetName === "local"){
+    dataStore.loadData("http://localhost:8000/data.json")
+  } else if (dataSetName === "file"){
+    // not implemented
+    console.log("Setting from file")
+    // dataStore.setData()
+  }
+  else {
+    try {
+      console.log("Not local")
+      // dataStore.loadData("http://localhost:8000/data.json")
+    } catch(error){
+      console.error("Error fetching non-local dataset")
+    }
+  }
   // selectStore.selectedK = dataStore.getCovariateKeys.at(0)
 })
 

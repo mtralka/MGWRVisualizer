@@ -32,7 +32,7 @@ const assignData = (graphArray, dataArray) => {
 }
 
 const createPlot = () => {
-  const selectedCovariateArray =  dataStore.getParams[selectionStore.getSelectedK || "K0"]
+  const selectedCovariateArray =  dataStore.getParams[selectionStore.getSelectedK || "K0"] || []
   const sortedArray = selectedCovariateArray.sort((a,b) => a.y - b.y)
 
   const significantNegativeArray = sortedArray.filter((el) => el.ctval < -1. * critical.value)

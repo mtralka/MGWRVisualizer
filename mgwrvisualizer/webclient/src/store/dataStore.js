@@ -3,7 +3,8 @@ import { useSelectionStore } from './selectionStore'
 
 export const useDataStore = defineStore('dataStore', {
   state: () => ({
-    geoJsonData: {},
+    geoJsonData: {
+      "type": "FeatureCollection","features": []},
     W: {},
     params: {},
     covaraites: {},
@@ -12,7 +13,7 @@ export const useDataStore = defineStore('dataStore', {
   }),
   getters: {
     getGeoJsonData(state){
-      return state.geoJsonData || {}
+      return state.geoJsonData
     },
     getW(state){
       return state.W
@@ -47,5 +48,23 @@ export const useDataStore = defineStore('dataStore', {
     }
   },
   actions: {
+    async loadData(dataset) {
+      const response = await fetch(dataset)
+    
+      if (response.ok) {
+        const data = await response.json()
+        this.setData(data)
+      } else {
+        console.error("Data fetching error")
+      }
+    },
+    async setData(data) {
+      this.geoJsonData = data.geojson
+      this.W = data.W
+      this.params = data.parameters
+      this.covaraites = data.covariates
+      this.diagnosticInfo = data.diagnosticInfo
+      this.modelResults = data.modelResults
+    },
   },
 })

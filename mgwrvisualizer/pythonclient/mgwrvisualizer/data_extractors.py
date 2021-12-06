@@ -24,6 +24,7 @@ def extract_geojson(
     gdf = geodataframe.merge(dataframe, on=merge_key)
     gdf = gdf.set_crs(crs)
     gdf = gdf.to_crs("EPSG:4326")
+
     return json.loads(gdf.to_json())
 
 

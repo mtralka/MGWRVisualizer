@@ -7,7 +7,7 @@ import { useDataStore } from "@/store/dataStore";
 import { useSelectionStore } from '@/store/selectionStore';
 import { MAP_STYLES } from '@/utils/defaultSettings';
 import { VizType } from '@/utils/types';
-import { onMounted, reactive } from 'vue';
+import { onMounted, reactive, watch } from 'vue';
 
 const dataStore = useDataStore()
 const selectionStore = useSelectionStore()
@@ -32,6 +32,14 @@ const renderTriggers = [
 onMounted(()=> {
     passData.data = dataStore.getGeoJsonData
 })
+
+watch(
+  () => [dataStore.getGeoJsonData],
+  () => {
+    passData.data = dataStore.getGeoJsonData
+  },
+  { deep: false }
+)
 
 const handleHover = ({ info, event }) => {
 

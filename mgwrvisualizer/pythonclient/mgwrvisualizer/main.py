@@ -165,7 +165,7 @@ class MGWRVisualizer:
         file_path: Path = file if isinstance(file, Path) else Path(file)
 
         if file_path.is_file() and prompt_existing:
-            user_input: str = input("File exists - overwrite? Y/N").upper().strip()
+            user_input: str = input("File exists - continue? Y/N").upper().strip()
 
             if user_input == "N":
                 return None
@@ -181,11 +181,15 @@ class MGWRVisualizer:
     def run(self, open_browser: bool = True) -> None:
 
         webclient_path: Path = self.webclient_path
-        serve_url: str = f"http://{self.url}:{self.port}"
+        serve_url: str = f"http://{self.url}:{self.port}/?name=local"
 
         class Handler(http.server.SimpleHTTPRequestHandler):
             def __init__(self, *args, **kwargs):
                 super().__init__(*args, **kwargs, directory=str(webclient_path))
+
+            def end_headers(self):
+                self.send_header("Access-Control-Allow-Origin", "*")
+                http.server.SimpleHTTPRequestHandler.end_headers(self)
 
             def do_GET(self):
 

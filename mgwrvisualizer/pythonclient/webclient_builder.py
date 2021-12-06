@@ -1,4 +1,5 @@
 from distutils.dir_util import copy_tree
+import errno
 import os
 import shutil
 import subprocess
@@ -7,7 +8,14 @@ import subprocess
 def main() -> None:
     start_dir: str = os.getcwd()
     target_destination: str = os.path.join(start_dir, "webclient_dist")
-    os.mkdir(target_destination)
+
+    try:
+        os.mkdir(target_destination)
+    except OSError as exc:
+        if exc.errno == errno.EEXIST and os.path.isdir(target_destination):
+            pass
+        else:
+            raise
 
     # delete contents
     for name in os.listdir(target_destination):
