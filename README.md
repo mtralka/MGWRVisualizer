@@ -6,7 +6,7 @@
 
 Learning Multiscale Geographically Weighted Regression (MGWR) can prove difficult and unaccesible. This website + clients aim to address this problem by creating easy-to-understand interactive visualizations of MGWR properties.
 
-[Deployed Test Site](mgwrvisualizer.netlify.app)
+[Deployed Test Site](https://mgwrvisualizer.netlify.app)
 
 ### Project Status
 
