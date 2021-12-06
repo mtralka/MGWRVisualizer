@@ -188,8 +188,10 @@ class MGWRVisualizer:
                 super().__init__(*args, **kwargs, directory=str(webclient_path))
 
             def do_GET(self):
+
                 if self.path == "/":
                     self.path = "index.html"
+
                 return http.server.SimpleHTTPRequestHandler.do_GET(self)
 
         if not hasattr(self, "processed_results"):

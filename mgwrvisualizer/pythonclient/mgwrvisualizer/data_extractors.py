@@ -1,12 +1,17 @@
 import json
-from typing import Any, Optional
+from typing import Any
 from typing import Dict
 from typing import List
+from typing import Optional
 from typing import Union
 from typing import cast
+import warnings
 
 import numpy as np
 import pandas as pd  # type: ignore
+
+
+warnings.simplefilter(action="ignore", category=pd.errors.PerformanceWarning)
 
 
 def extract_geojson(
