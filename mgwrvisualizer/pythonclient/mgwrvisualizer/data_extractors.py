@@ -1,5 +1,5 @@
 import json
-from typing import Any
+from typing import Any, Optional
 from typing import Dict
 from typing import List
 from typing import Union
@@ -12,7 +12,7 @@ import pandas as pd  # type: ignore
 def extract_geojson(
     geodataframe,
     dataframe: pd.DataFrame,
-    merge_key: str,
+    merge_key: Optional[str],
     crs: str,
 ) -> Any:
     geodataframe["UID"] = geodataframe.index
@@ -72,7 +72,7 @@ def extract_model_info(mgwr_results) -> Dict[str, Union[int, float, str]]:
     )
 
     model_dict["Score of Change (SOC) type"] = cast(
-        str, ("RSS" if mgwr_results.model.selector.rss_score else "Smoothing f",)
+        str, ("RSS" if mgwr_results.model.selector.rss_score else "Smoothing f")
     )
 
     return model_dict
@@ -85,8 +85,7 @@ def extract_spatial_weights(mgwr_results) -> Dict[str, Any]:
     for K, matrix in enumerate(mgwr_results.W):
         df = pd.DataFrame()
         for n, matrix in enumerate(mgwr_results.W[K]):
-            df[f"{n}"] = matrix
-            df[f"{n}"] = df[f"{n}"].astype(float)
+            df[f"{n}"] = matrix.astype(float)
         if K != 0:
             KN = KN + ","
         KN = KN + '"K' + str(K) + '":' + df.to_json()
