@@ -1,16 +1,17 @@
-import Dashboard from "@/views/Dashboard.vue";
+import Index from "@/views/Index.vue";
+import VizDashboard from "@/views/VizDashboard.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
     {
       path: "/",
-      name: "Hello Worlds",
-      component: Dashboard,
+      name: "Home",
+      component: Index,
     },
     {
       path: "/visualize",
-      name: "Visualize",
-      component: Dashboard,
+      name: "Visualizer",
+      component: VizDashboard,
     },
   ]
 
