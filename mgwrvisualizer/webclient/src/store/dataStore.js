@@ -7,6 +7,7 @@ export const useDataStore = defineStore('dataStore', {
     W: {},
     params: {},
     covaraites: {},
+    diagnosticInfo: {},
     modelResults: {}
   }),
   getters: {
@@ -39,10 +40,10 @@ export const useDataStore = defineStore('dataStore', {
       return state.params
     },
     getDiagnosticInformation(state){
-      return state.modelResults["diagnostic_info"]
+      return state.diagnosticInfo
     },
     getModelResults(state){
-      return state.modelResults["model_results"]
+      return state.modelResults
     }
   },
   actions: {
