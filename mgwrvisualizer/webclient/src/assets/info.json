@@ -1,0 +1,6 @@
+{
+    "title" : "MGWRVisualizer",
+    "indexPage": {
+        "summary" : "Create geographic flow maps representing numbers of movements between locations.\nVisualize your own origin-destination data published in Google Sheets.\nExplore the data interactively."
+    }
+}

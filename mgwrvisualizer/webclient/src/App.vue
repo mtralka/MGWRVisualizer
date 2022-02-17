@@ -32,18 +32,24 @@ onMounted(async () => {
 </script>
 
 <template>
+  <div
+  font="sans subpixel-antialiased"
+  >
+
+  
   <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/dashboard">viz</router-link>
   </div> -->
-  <router-view class="min-h-screen w-screen overflow-x-hidden"/>
+    <router-view class="min-h-screen w-screen overflow-x-hidden"/>
+  </div>
 </template>
 
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #344955;
-}
+} */
 </style>
